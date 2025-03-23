@@ -1,0 +1,155 @@
+/* Job Tracker Specific Styles */
+
+/* Application Cards */
+.application-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    height: 100%;
+}
+
+.application-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.application-card .card-header {
+    padding: 0.75rem;
+}
+
+.application-card .company-name {
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.application-card .role {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.application-card .date {
+    font-size: 0.8rem;
+    color: #888;
+}
+
+.application-card .notes {
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: 0.5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+/* Status Badges */
+.status-badge {
+    display: inline-block;
+    padding: 0.35em 0.65em;
+    font-size: 0.75em;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 50rem;
+}
+
+.status-badge.applied {
+    background-color: #e3f2fd;
+    color: #0d47a1;
+}
+
+.status-badge.interviewing {
+    background-color: #fff8e1;
+    color: #ff8f00;
+}
+
+.status-badge.rejected {
+    background-color: #ffebee;
+    color: #c62828;
+}
+
+.status-badge.offer {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+}
+
+.status-badge.accepted {
+    background-color: #e0f2f1;
+    color: #00695c;
+}
+
+/* Table View */
+#table-view .status-cell .status-badge {
+    width: 100px;
+    text-align: center;
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: 3rem 1rem;
+}
+
+.empty-state .icon {
+    font-size: 3rem;
+    color: #ccc;
+    margin-bottom: 1rem;
+}
+
+.empty-state .message {
+    color: #888;
+    margin-bottom: 1.5rem;
+}
+
+/* Action Buttons */
+.action-btn {
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.action-btn:hover {
+    color: var(--secondary-color);
+}
+
+.action-btn.delete {
+    color: var(--danger-color);
+}
+
+.action-btn.delete:hover {
+    color: #b71c1c;
+}
+
+/* Modal */
+.modal-content {
+    border: none;
+    border-radius: var(--border-radius);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .application-form-container {
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .card-header {
+        flex-direction: column;
+        align-items: flex-start !important;
+    }
+    
+    .card-header .d-flex {
+        margin-top: 1rem;
+        width: 100%;
+    }
+    
+    .card-header .btn-group {
+        margin-top: 0.5rem;
+    }
+}

@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}Project Dashboard - Home{% endblock %}
+
+{% block content %}
+<section class="projects">
+    <h2 class="mb-4">My Projects</h2>
+    
+    <div class="row">
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h3 class="card-title">Job Application Tracker</h3>
+                    <p class="card-text">Track your job applications and their statuses</p>
+                    {% if current_user.is_authenticated %}
+                    <a href="{{ url_for('job_tracker.index') }}" class="btn btn-primary">Open Project</a>
+                    {% else %}
+                    <a href="{{ url_for('auth.login') }}" class="btn btn-primary">Login to Access</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <!-- Additional projects can be added here in the future -->
+    </div>
+    
+    {% if current_user.is_authenticated %}
+    <div class="card mt-4 bg-light">
+        <div class="card-body">
+            <h3 class="card-title">Adding New Projects</h3>
+            <p class="card-text">To add a new project to this dashboard:</p>
+            <ol>
+                <li>Create a new blueprint in the app directory</li>
+                <li>Create templates for your project</li>
+                <li>Register the blueprint in app/__init__.py</li>
+                <li>Add a new project card to this page</li>
+            </ol>
+        </div>
+    </div>
+    {% else %}
+    <div class="card mt-4 bg-light">
+        <div class="card-body">
+            <h3 class="card-title">Welcome to Project Dashboard</h3>
+            <p class="card-text">This platform helps you organize and manage your projects in one place.</p>
+            <p class="card-text">Please <a href="{{ url_for('auth.login') }}">login</a> or <a href="{{ url_for('auth.register') }}">register</a> to access the projects.</p>
+        </div>
+    </div>
+    {% endif %}
+</section>
+{% endblock %}
