@@ -91,6 +91,48 @@ main {
     font-weight: 600;
 }
 
+/* Landing Page */
+.jumbotron {
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+    background: linear-gradient(to right, #f8f9fa, #e9ecef);
+}
+
+.jumbotron h1 {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.jumbotron .lead {
+    color: var(--secondary-color);
+    font-weight: 500;
+}
+
+.tools .card {
+    transition: var(--transition);
+}
+
+.tools .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-lg {
+    padding: 0.75rem 1.5rem;
+    font-weight: 500;
+}
+
+.btn-outline-primary {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
 /* Footer */
 footer {
     margin-top: auto;
